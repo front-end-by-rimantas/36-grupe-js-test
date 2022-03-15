@@ -25,22 +25,29 @@ const people = [
     },
 ];
 
-const colors = [];
-
-// for (let i = 0; i < people.length; i++) {
-//     const person = people[i];
-//     const { color } = person;
-//     colors.push(color);
-// }
-
+// atsirenkame kokiu spalvu ir kokiais kiekiais yra masyve
+const colorsCount = {};
 for (const person of people) {
     const { color } = person;
-    colors.push(color);
+    colorsCount[color] = colorsCount[color] ? colorsCount[color] + 1 : 1;
 }
 
-// people.forEach(person => {
-//     const { color } = person;
-//     colors.push(color);
-// })
+// randame dazniausiai paminetos spalvos kieki (spalvos pavadinimas nera aktualus)
+let mostPopularColorCount = 0;
+for (const color in colorsCount) {
+    const count = colorsCount[color];
+    if (count > mostPopularColorCount) {
+        mostPopularColorCount = count;
+    }
+}
 
-console.log(colors);
+// randame visus spalvu pavadinimus, kurie atitinka didziausia paminejimu kieki
+const mostPopularColorNames = [];
+for (const color in colorsCount) {
+    const count = colorsCount[color];
+    if (count === mostPopularColorCount) {
+        mostPopularColorNames.push(color);
+    }
+}
+
+console.log(mostPopularColorNames);
