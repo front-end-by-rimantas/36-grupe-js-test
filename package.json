@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "nodemon",
     "math": "nodemon ./math.js",
+    "math-call": "nodemon ./math-call.js",
     "text": "nodemon ./text.js",
+    "callback": "nodemon ./callback.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
