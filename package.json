@@ -10,6 +10,8 @@
     "text": "nodemon ./text.js",
     "callback": "nodemon ./callback.js",
     "spread": "nodemon ./spread.js",
+    "hof": "nodemon ./hof.js",
+    "more": "nodemon ./more.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
